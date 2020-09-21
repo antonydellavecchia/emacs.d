@@ -16,7 +16,6 @@ There are two things you can do about this warning:
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -27,13 +26,12 @@ There are two things you can do about this warning:
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
- '(custom-enabled-themes (quote (wheatgrass)))
- '(gnus-select-method (quote (nnreddit "")))
- '(helm-completion-style (quote emacs))
+ '(custom-enabled-themes '(wheatgrass))
+ '(gnus-select-method '(nnreddit ""))
+ '(helm-completion-style 'emacs)
  '(js-indent-level 2)
  '(package-selected-packages
-   (quote
-    (elpygen pygen ac-haskell-process haskell-mode git-blamed emacsql-psql emacsql conda smartparens nnreddit pyenv-mode-auto pyenv-mode elpy flymake-jslint helm sphinx-doc dockerfile-mode magit treemacs indium leetcode circe el-get use-package slack flymake-json ssh-config-mode yaml-mode multiple-cursors rjsx-mode js2-mode restclient solaire-mode rubik restclient-test)))
+   '(helm-tramp docker-tramp lsp-mode ac-js2 auctex elpygen pygen ac-haskell-process haskell-mode git-blamed emacsql-psql emacsql conda smartparens nnreddit pyenv-mode-auto pyenv-mode elpy flymake-jslint helm sphinx-doc dockerfile-mode magit treemacs indium leetcode circe el-get use-package slack flymake-json ssh-config-mode yaml-mode multiple-cursors rjsx-mode js2-mode restclient solaire-mode rubik restclient-test))
  '(pyvenv-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -81,6 +79,8 @@ There are two things you can do about this warning:
 (require 'flymake-jslint)
 (add-hook 'js-mode-hook 'flymake-jslint-load)
 
+
+(require 'docker-tramp)
 
 ;; elpy
 (package-initialize)
